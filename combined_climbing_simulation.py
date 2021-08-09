@@ -51,7 +51,7 @@ class Simulator:
             self.participants_info = round_simulator_helper.get_user_input()
     
     def simulate(self):
-        print("How many rounds do you want to simuulate?")
+        print("How many rounds do you want to simulate?")
         print(" A '1' response or an empty response would simulate just 1 round, after all, the olympics is only held once!")
         print("If rounds > 1, aggregate statistics will be displayed")
         num_rounds = input()

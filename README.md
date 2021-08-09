@@ -3,7 +3,7 @@
 Motivation: Due to the multiplicative nature of scoring, there is much uncertainty over who will come up on top, with the top positions often changing places in a single event. This simulation hopes to capture the nature of this uncertainty.
 
 ##  How it works
-- The combined format's randking multiplies the ranking of each athlete over 3 events, and the athlete's are then than ranked by their overall scores in ascending order.
+- The combined format's ranking multiplies the ranking of each athlete over 3 events, and the athlete's are then than ranked by their overall scores in ascending order.
 - Speed is simulated as a best time format, rather than atheletes competing head-to-head, since inital seeds from quals are not provided here.
 - Bouldering is a simulation of atheletes' attempts in 3 boulders, which are set as the types - slab, dynamic, traditional, respectively
 - Lead is simulated as a step by step completion of each hold, with a possibiity of slipping at each hold.
