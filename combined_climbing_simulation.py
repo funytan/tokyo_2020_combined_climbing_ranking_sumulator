@@ -61,7 +61,7 @@ class Simulator:
             num_rounds = int(num_rounds)
 
         # Store aggregate statistics: 1. Medal Counts 2. Points needed to win each position 3. Best performance/ Average performance of each cateogry
-        store_medal_count = {comp:[0,0,0] for comp in self.participants_info}
+        store_medal_count = {comp:[0,0,0,0] for comp in self.participants_info} # num_gold, num_silver, num_bronze, total_score_for_gold
         store_position_points = {rank:[] for rank in range(1,4)}
         store_event_performance = {
             "speed": [],
@@ -84,6 +84,8 @@ class Simulator:
                 for medal in medal_results:
                     comp, score = medal_results[medal]
                     store_medal_count[comp][medal-1] += 1
+                    if medal == 1:
+                        store_medal_count[comp][3] += score
                     store_position_points[medal].append(score)
                 
                 store_event_performance['speed'] += [res[0] for res in speed_res]
@@ -92,7 +94,7 @@ class Simulator:
 
         
         if num_rounds > 1:
-            tabulate_rounds(store_medal_count, store_position_points, store_event_performance)
+            tabulate_rounds(store_medal_count, store_position_points, store_event_performance, num_rounds)
         print("Enter for the next simulation")
         input()
         self.simulate()

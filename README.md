@@ -17,3 +17,9 @@ To set the range of difficulties for each stage, aspriring routesetters should l
 
 ### Simulating
 You may choose to simulate either one round, or mulitple rounds.
+
+One round:
+![Alt text](docs/images/single_round.png "One Round")
+
+Multiple rounds:
+![Alt text](docs/images/multiple_rounds.png "Multiple Rounds")
