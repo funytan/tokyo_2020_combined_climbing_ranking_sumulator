@@ -1,0 +1,16 @@
+# emacs
+*~
+
+# compiled
+*.pyc
+
+# IntelliJ
+.idea
+*.iml
+
+# notebook
+notebook/.ipynb_checkpoints
+.ipynb_checkpoints
+
+# DS_Store
+.DS_Store
