@@ -1,0 +1,126 @@
+# Each discipline involves a roll of skill/std.
+
+# speed: skill/std is secodns taken to complete, slip is chance of a slip that adds 10% to total time determined by skill and std.
+# bouldering: skill/std is out of 10 points. If skill and std roll is greater than a boulder's zone/top difficulty, the zone.top is awarded. There are a fixed number of attempts per boulder per climber.
+# bouldering: boulders are slab, dynmamic, traditional settings for boulders 1,2,3 respectively
+# lead: skill/std is the number of holds. If slip chance is non-zero, the simulation will simulate the possiblity of the climber slipping from hold 0 to the maximum climbed hold determined by this round's roll.
+# std refers to standard devitaion here, so its units will be the same as the one given for skill
+
+gines_lopez:
+  speed:
+    skill: 7.2
+    std: 0.2
+    slip: 0.1
+  bouldering:
+    skill_1: 5
+    std_1: 1
+    skill_2: 5
+    std_2: 1
+    skill_3: 5
+    std_3: 1
+  lead:
+    skill: 45
+    std: 2
+    slip: 0.015
+
+narasaki:
+  speed:
+    skill: 6.5
+    std: 0.2
+    slip: 0.3
+  bouldering:
+    skill_1: 7
+    std_1: 1
+    skill_2: 8
+    std_2: 1
+    skill_3: 6
+    std_3: 1
+  lead:
+    skill: 35
+    std: 1
+    slip: 0.015
+
+ondra:
+  speed:
+    skill: 7.5
+    std: 0.2
+    slip: 0.2
+  bouldering:
+    skill_1: 8
+    std_1: 1
+    skill_2: 5
+    std_2: 1
+    skill_3: 8
+    std_3: 1
+  lead:
+    skill: 48
+    std: 1
+    slip: 0.01
+
+duffy:
+  speed:
+    skill: 7.5
+    std: 0.2
+    slip: 0.2
+  bouldering:
+    skill_1: 6
+    std_1: 1
+    skill_2: 5
+    std_2: 1
+    skill_3: 6
+    std_3: 1
+  lead:
+    skill: 45
+    std: 0.1
+    slip: 0.01
+
+coleman:
+  speed:
+    skill: 7.5
+    std: 0.2
+    slip: 0.2
+  bouldering:
+    skill_1: 7
+    std_1: 1
+    skill_2: 7
+    std_2: 1
+    skill_3: 7
+    std_3: 1
+  lead:
+    skill: 30
+    std: 3
+    slip: 0.03
+
+mawem:
+  speed:
+    skill: 6.5
+    std: 0.1
+    slip: 0.2
+  bouldering:
+    skill_1: 7
+    std_1: 1
+    skill_2: 7
+    std_2: 1
+    skill_3: 5
+    std_3: 1
+  lead:
+    skill: 30
+    std: 1
+    slip: 0.02
+
+schubert:
+  speed:
+    skill: 7.3
+    std: 0.2
+    slip: 0.2
+  bouldering:
+    skill_1: 6.5
+    std_1: 1
+    skill_2: 6
+    std_2: 1
+    skill_3: 7.5
+    std_3: 1
+  lead:
+    skill: 46
+    std: 0.5
+    slip: 0.01

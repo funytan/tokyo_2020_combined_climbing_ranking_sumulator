@@ -1,0 +1,24 @@
+
+# Configs configs configs!
+# !!! Route-setters should focus on bouldering_zone_difficulty, bouldering_top_difficulty and lead_wall_num_holds !!!
+
+# speed 
+default_speed_timing: 7.5
+default_speed_timing_std: 0.5
+default_speed_slip_chance: 0.3
+
+# bouldering specific configs 
+
+default_bouldering_skill: 6
+default_bouldering_skill_std: 1
+
+bouldering_zone_difficulty: [5,7] # difficulty out of 10
+bouldering_top_difficulty: [7,9] # difficulty out of 10
+bouldering_difficulty_drop_per_attempt: 0.05 # Athletes get better each attempt they made
+total_attempts: 6 # fixing this for all athletes to keep things simple
+
+# number of total holds in a lead wall
+lead_wall_num_holds: 50 
+default_lead_skill: 35
+default_lead_skill_std: 3
+default_lead_slip_chance: 0
