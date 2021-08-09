@@ -61,14 +61,13 @@ def tabulate_rounds(store_medal_count, store_position_points, store_event_perfor
     store_event_performance['bouldering'] = sorted(store_event_performance['bouldering'])[::-1]
     store_event_performance['lead'] = sorted(store_event_performance['lead'])[::-1]
     # print medal tally
-    print(num_rounds)
     print(
         tabulate([[
             item[-1], 
             f"{item[0][0]} ({round(item[0][0]/num_rounds*100,2)})%", 
             f"{item[0][1]} ({round(item[0][1]/num_rounds*100,2)})%",  
             f"{item[0][2]} ({round(item[0][2]/num_rounds*100,2)})%", 
-            sum(item[0]),
+            sum(item[0][:3]),
             f"{round(item[0][3]/item[0][0] ,2)}" if item[0][3]>0 else "N/A",
         ]for item in medal_tally], headers=['Name', 'First', 'Second', 'Third', 'Total Medals', 'Average Points for Win'])
     )
