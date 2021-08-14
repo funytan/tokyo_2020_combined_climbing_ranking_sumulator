@@ -60,7 +60,8 @@ class Simulator:
         else:
             num_rounds = int(num_rounds)
 
-        # Store aggregate statistics: 1. Medal Counts 2. Points needed to win each position 3. Best performance/ Average performance of each cateogry
+        # Store aggregate statistics: 1. score of participant per round 2. Medal Counts 3. Points needed to win each position 4. Best performance/ Average performance of each cateogry
+        participants_scores = {comp:[] for comp in self.participants_info}
         store_medal_count = {comp:[0,0,0,0] for comp in self.participants_info} # num_gold, num_silver, num_bronze, total_score_for_gold
         store_position_points = {rank:[] for rank in range(1,4)}
         store_event_performance = {
@@ -77,9 +78,24 @@ class Simulator:
 
 
             if num_rounds == 1:
-                tabulate_round(self.participants_info, speed_res, bouldering_res, lead_res, single_round=True)
+                tabulate_round(
+                    self.participants_info, 
+                    speed_res, 
+                    bouldering_res, 
+                    lead_res, 
+                    single_round=True
+                )
             else:
-                medal_results = tabulate_round(self.participants_info, speed_res, bouldering_res, lead_res, single_round=False)
+                medal_results, final_scores = tabulate_round(
+                    self.participants_info, 
+                    speed_res, 
+                    bouldering_res, 
+                    lead_res, 
+                    single_round=False
+                )
+
+                for score, comp, _ in final_scores:
+                    participants_scores[comp].append(score)
             
                 for medal in medal_results:
                     comp, score = medal_results[medal]
@@ -94,7 +110,7 @@ class Simulator:
 
         
         if num_rounds > 1:
-            tabulate_rounds(store_medal_count, store_position_points, store_event_performance, num_rounds)
+            tabulate_rounds(participants_scores, store_medal_count, store_position_points, store_event_performance, num_rounds)
         print("Enter for the next simulation")
         input()
         self.simulate()

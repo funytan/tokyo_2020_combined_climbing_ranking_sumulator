@@ -53,9 +53,9 @@ def tabulate_round(participants_info, speed_res, bouldering_res, lead_res, singl
             1 : (final_scores[0][1], final_scores[0][0]),
             2 : (final_scores[1][1], final_scores[1][0]),
             3 : (final_scores[2][1], final_scores[2][0]),
-        }
+        }, final_scores
 
-def tabulate_rounds(store_medal_count, store_position_points, store_event_performance, num_rounds):
+def tabulate_rounds(participants_scores, store_medal_count, store_position_points, store_event_performance, num_rounds):
     medal_tally = sorted([(store_medal_count[comp], comp) for comp in store_medal_count])[::-1]
     store_event_performance['speed'] = sorted(store_event_performance['speed'])
     store_event_performance['bouldering'] = sorted(store_event_performance['bouldering'])[::-1]
@@ -69,7 +69,9 @@ def tabulate_rounds(store_medal_count, store_position_points, store_event_perfor
             f"{item[0][2]} ({round(item[0][2]/num_rounds*100,2)})%", 
             sum(item[0][:3]),
             f"{round(item[0][3]/item[0][0] ,2)}" if item[0][3]>0 else "N/A",
-        ]for item in medal_tally], headers=['Name', 'First', 'Second', 'Third', 'Total Medals', 'Average Points for Win'])
+            f"{round(np.mean(participants_scores[item[-1]]),2)}",
+            f"{round(np.std(participants_scores[item[-1]]),2)}",
+        ]for item in medal_tally], headers=['Name', 'First', 'Second', 'Third', 'Total Medals', 'Average Points for Win', 'Average Points', 'Std points'])
     )
     print('Enter to show statistics of winning scores')
     input()
