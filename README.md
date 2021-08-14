@@ -1,6 +1,6 @@
 # Virtual simulator for Tokyo 2020 Sport Climbing event - combined format.
 
-Motivation: Due to the multiplicative nature of scoring, there is much uncertainty over who will come up on top, with the top positions often changing places in a single event. This simulation hopes to capture the nature of this uncertainty.
+Motivation: Due to the multiplicative nature of scoring, there is much uncertainty over the climber who will come up on top, with the top positions often changing places in a single event or even climb. This simulation hopes to capture the nature of this uncertainty, and also find out the aggregated relative rankings of climbers through multi-round simulation.
 
 ##  How it works
 - The combined format's ranking multiplies the ranking of each athlete over 3 events, and the athlete's are then than ranked by their overall scores in ascending order.
